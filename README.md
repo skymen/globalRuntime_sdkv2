@@ -1,21 +1,21 @@
 <img src="./src/icon.svg" width="100" /><br>
-# Sample Addon
-<i>Description</i> <br>
-### Version 0.0.0.0
+# Global Runtime
+<i>Makes the SDK runtime global</i> <br>
+### Version 2.0.0.0
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases/download/sample_addon-0.0.0.0.c3addon/sample_addon-0.0.0.0.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/globalRuntime_sdkv2/releases/download/skymen_GlobalRuntime-2.0.0.0.c3addon/skymen_GlobalRuntime-2.0.0.0.c3addon)
 <br>
-<sub> [See all releases](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases) </sub> <br>
+<sub> [See all releases](https://github.com/skymen/globalRuntime_sdkv2/releases) </sub> <br>
 
-#### What's New in 0.0.0.0
-**Added:**
-Initial release.
-
+#### What's New in 2.0.0.0
+- **Added:** SDK v2 port. Same id and property as the v1 addon.
+- **Changed:** SDK v2 has no path to the internal runtime, so this addon now captures it by subclassing every built-in plugin and behavior instance class. The global is published as a lazy getter: it exists immediately and resolves to the runtime once the first built-in instance is created. In a project with no built-in objects at all it stays null.
 
 <sub>[View full changelog](#changelog)</sub>
 
 ---
 <b><u>Author:</u></b> skymen <br>
+<b>[Documentation](https://github.com/skymen/globalRuntime_sdkv2)</b>  <br>
 <sub>Made using [CAW](https://marketplace.visualstudio.com/items?itemName=skymen.caw) </sub><br>
 
 ## Table of Contents
@@ -47,43 +47,30 @@ npm run dev
 ## Properties
 | Property Name | Description | Type |
 | --- | --- | --- |
+| Global Runtime Name | The name to use to expose the runtime with | text |
 
 
 ---
 ## Actions
 | Action | Description | Params
 | --- | --- | --- |
-| Sample Action Combo | This is a sample action | Param1             *(combo)* <br> |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
-| Sample Action Async | This is a sample action |  |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
 
 
 ---
 ## Conditions
 | Condition | Description | Params
 | --- | --- | --- |
-| Sample Condition | This is a sample condition | Param1 *(combo)* <br> |
-| Sample Condition | This is a sample condition | Param1 *(string)* <br> |
-| Sample Trigger | This is a sample trigger |  |
-| Sample Condition | This is a sample condition |  |
 
 
 ---
 ## Expressions
 | Expression | Description | Return Type | Params
 | --- | --- | --- | --- |
-| Expression2 | Sample Expression | string |  | 
-| Expression | Sample Expression | number |  | 
-| SampleExpression | This is a sample expression | string |  | 
 
 
 ---
 ## Changelog
 
-### Version 0.0.0.0
-
-**Added:**
-Initial release.
-
----
+**2.0.0.0**
+- **Added:** SDK v2 port. Same id and property as the v1 addon.
+- **Changed:** SDK v2 has no path to the internal runtime, so this addon now captures it by subclassing every built-in plugin and behavior instance class. The global is published as a lazy getter: it exists immediately and resolves to the runtime once the first built-in instance is created. In a project with no built-in objects at all it stays null.
