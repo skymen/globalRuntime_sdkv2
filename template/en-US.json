@@ -1,0 +1,23 @@
+{
+  "languageTag": "en-US",
+  "fileDescription": "Strings for skymen_globalruntime.",
+  "text": {
+    "plugins": {
+      "skymen_globalruntime": {
+        "name": "Global Runtime",
+        "description": "Makes the SDK runtime global",
+        "help-url": "https://github.com/skymen/globalRuntime_sdkv2",
+        "aceCategories": {},
+        "properties": {
+          "global-runtime-name": {
+            "name": "Global Runtime Name",
+            "desc": "The name to use to expose the runtime with"
+          }
+        },
+        "actions": {},
+        "conditions": {},
+        "expressions": {}
+      }
+    }
+  }
+}
