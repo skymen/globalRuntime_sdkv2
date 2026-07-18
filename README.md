@@ -1,14 +1,14 @@
 <img src="./src/icon.svg" width="100" /><br>
 # Global Runtime
 <i>Makes the SDK runtime global</i> <br>
-### Version 2.0.0.2
+### Version 2.0.0.3
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/globalRuntime_sdkv2/releases/download/skymen_GlobalRuntime-2.0.0.2.c3addon/skymen_GlobalRuntime-2.0.0.2.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/globalRuntime_sdkv2/releases/download/skymen_GlobalRuntime-2.0.0.3.c3addon/skymen_GlobalRuntime-2.0.0.3.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/globalRuntime_sdkv2/releases) </sub> <br>
 
-#### What's New in 2.0.0.2
-- **Changed:** Removed save game handling and published-name bookkeeping. A single global plugin only ever publishes one name and save states do not need it.
+#### What's New in 2.0.0.3
+- **Changed:** The global is now a plain value set once both the name and the runtime are known, instead of a getter. Same behavior as v1 once set.
 
 <sub>[View full changelog](#changelog)</sub>
 
@@ -69,6 +69,9 @@ npm run dev
 
 ---
 ## Changelog
+
+**2.0.0.3**
+- **Changed:** The global is now a plain value set once both the name and the runtime are known, instead of a getter. Same behavior as v1 once set.
 
 **2.0.0.2**
 - **Changed:** Removed save game handling and published-name bookkeeping. A single global plugin only ever publishes one name and save states do not need it.

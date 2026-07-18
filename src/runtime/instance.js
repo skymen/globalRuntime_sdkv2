@@ -2,8 +2,19 @@
 // internal runtime, so we capture it the way skymen's other hacks do: patch
 // the built-in Sprite plugin's engine-internal Instance class so its
 // constructor records `this._runtime` from the first Sprite created.
+//
+// The global name and the runtime arrive from two different places in
+// unknown order, so both sides hand their piece to expose() and whichever
+// arrives second triggers the plain assignment.
 let capturedRuntime = null;
+let publishName = null;
 let spritePatched = false;
+
+function expose() {
+  if (publishName !== null && capturedRuntime !== null) {
+    globalThis[publishName] = capturedRuntime;
+  }
+}
 
 function patchSprite() {
   if (spritePatched) return;
@@ -22,6 +33,7 @@ function patchSprite() {
       super(...args);
       if (!capturedRuntime && this._runtime) {
         capturedRuntime = this._runtime;
+        expose();
       }
     }
   };
@@ -40,10 +52,8 @@ export default function (parentClass) {
         this.name = properties[0];
       }
       patchSprite();
-      Object.defineProperty(globalThis, this.name, {
-        configurable: true,
-        get: () => capturedRuntime,
-      });
+      publishName = this.name;
+      expose();
     }
 
     _getDebuggerProperties() {

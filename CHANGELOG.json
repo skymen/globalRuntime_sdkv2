@@ -1,4 +1,9 @@
 {
+  "2.0.0.3": {
+    "added": "",
+    "changed": "The global is now a plain value set once both the name and the runtime are known, instead of a getter. Same behavior as v1 once set.",
+    "fixed": ""
+  },
   "2.0.0.2": {
     "added": "",
     "changed": "Removed save game handling and published-name bookkeeping. A single global plugin only ever publishes one name and save states do not need it.",
