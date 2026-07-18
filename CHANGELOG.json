@@ -1,4 +1,9 @@
 {
+  "2.0.0.1": {
+    "added": "",
+    "changed": "The capture hack now patches only the built-in Sprite plugin instead of every registered plugin and behavior class. Warns in the console if the project has no Sprite object.",
+    "fixed": ""
+  },
   "2.0.0.0": {
     "added": "SDK v2 port. Same id and property as the v1 addon.",
     "changed": "SDK v2 has no path to the internal runtime, so this addon now captures it by subclassing every built-in plugin and behavior instance class. The global is published as a lazy getter: it exists immediately and resolves to the runtime once the first built-in instance is created. In a project with no built-in objects at all it stays null.",
