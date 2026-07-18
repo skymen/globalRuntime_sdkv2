@@ -1,14 +1,14 @@
 <img src="./src/icon.svg" width="100" /><br>
 # Global Runtime
 <i>Makes the SDK runtime global</i> <br>
-### Version 2.0.0.1
+### Version 2.0.0.2
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/globalRuntime_sdkv2/releases/download/skymen_GlobalRuntime-2.0.0.1.c3addon/skymen_GlobalRuntime-2.0.0.1.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/globalRuntime_sdkv2/releases/download/skymen_GlobalRuntime-2.0.0.2.c3addon/skymen_GlobalRuntime-2.0.0.2.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/globalRuntime_sdkv2/releases) </sub> <br>
 
-#### What's New in 2.0.0.1
-- **Changed:** The capture hack now patches only the built-in Sprite plugin instead of every registered plugin and behavior class. Warns in the console if the project has no Sprite object.
+#### What's New in 2.0.0.2
+- **Changed:** Removed save game handling and published-name bookkeeping. A single global plugin only ever publishes one name and save states do not need it.
 
 <sub>[View full changelog](#changelog)</sub>
 
@@ -69,6 +69,9 @@ npm run dev
 
 ---
 ## Changelog
+
+**2.0.0.2**
+- **Changed:** Removed save game handling and published-name bookkeeping. A single global plugin only ever publishes one name and save states do not need it.
 
 **2.0.0.1**
 - **Changed:** The capture hack now patches only the built-in Sprite plugin instead of every registered plugin and behavior class. Warns in the console if the project has no Sprite object.

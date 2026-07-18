@@ -4,15 +4,6 @@
 // constructor records `this._runtime` from the first Sprite created.
 let capturedRuntime = null;
 let spritePatched = false;
-const publishedNames = new Set();
-
-function publish(name) {
-  publishedNames.add(name);
-  Object.defineProperty(globalThis, name, {
-    configurable: true,
-    get: () => capturedRuntime,
-  });
-}
 
 function patchSprite() {
   if (spritePatched) return;
@@ -49,24 +40,10 @@ export default function (parentClass) {
         this.name = properties[0];
       }
       patchSprite();
-      publish(this.name);
-    }
-
-    _release() {
-      super._release();
-    }
-
-    _saveToJson() {
-      return {
-        name: this.name,
-      };
-    }
-
-    _loadFromJson(o) {
-      if (o.name !== this.name && !publishedNames.has(o.name)) {
-        this.name = o.name;
-        publish(this.name);
-      }
+      Object.defineProperty(globalThis, this.name, {
+        configurable: true,
+        get: () => capturedRuntime,
+      });
     }
 
     _getDebuggerProperties() {
