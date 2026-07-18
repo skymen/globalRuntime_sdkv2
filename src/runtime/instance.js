@@ -1,11 +1,3 @@
-// This whole addon is one sanctioned hack. SDK v2 exposes no path to the
-// internal runtime, so we capture it the way skymen's other hacks do: patch
-// the built-in Sprite plugin's engine-internal Instance class so its
-// constructor records `this._runtime` from the first Sprite created.
-//
-// The global name and the runtime arrive from two different places in
-// unknown order, so both sides hand their piece to expose() and whichever
-// arrives second triggers the plain assignment.
 let capturedRuntime = null;
 let publishName = null;
 let spritePatched = false;
@@ -23,7 +15,7 @@ function patchSprite() {
   if (!C3) return;
   if (!C3.Plugins.Sprite || !C3.Plugins.Sprite.Instance) {
     console.warn(
-      "[Global Runtime] Sprite plugin not found. Add a Sprite to the project or the runtime cannot be captured."
+      "[Global Runtime] Sprite plugin not found. Add a Sprite to the project or the runtime cannot be captured.",
     );
     return;
   }
